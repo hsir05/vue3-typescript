@@ -12,7 +12,7 @@ const whiteList = ['/', '/login', '/404']
 
 router.beforeEach((to, from, next) => {
     NProgress.start()
-    const hasToken = getStore({ name: 'access-token' })
+    const hasToken = getStore('access-token' )
     if (whiteList.indexOf(to.path) !== -1) {
         if (hasToken && to.path === '/login') {
             next(`${from.path}`)

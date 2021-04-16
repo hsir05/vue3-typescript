@@ -1,20 +1,13 @@
 <template>
 <div class="login-container">
-    <a-form
-        name="custom-validation"
-        class="form-wrap"
-        ref="formRef"
-        :model="formState"
-        :rules="rules"
-        v-bind="layout"
-        @finish="handleFinish"
-        @finishFailed="handleFinishFailed">
+    <a-form  name="custom-validation" class="form-wrap"  ref="formRef"  :model="formState"  :rules="rules"
+        v-bind="layout"  @finish="handleFinish" @finishFailed="handleFinishFailed">
         <div class="login-title">后台管理系统</div>
         <a-form-item required has-feedback label="账号" name="account">
-            <a-input v-model:value="formState.account" type="account" :size="size" autocomplete="off" />
+            <a-input v-model:value="formState.account" type="account" placeholder="请输入账号" :size="size" autocomplete="off" />
         </a-form-item>
         <a-form-item required has-feedback label="密码" name="password">
-            <a-input v-model:value="formState.password" type="password" :size="size" autocomplete="off" />
+            <a-input v-model:value="formState.password" type="password" placeholder="请输入密码" :size="size" autocomplete="off" />
         </a-form-item>
         <a-form-item :wrapper-col="{ span: 16, offset: 4 }">
             <a-button type="primary" style="width:99%" shape="round" html-type="submit" :size="size">登录</a-button>
@@ -86,9 +79,10 @@ export default defineComponent({
         font-size: 18px;
         margin: 10px 0 20px;
         font-weight: 500;
+        text-align: center;
     }
     .form-wrap{
-        width: 400px;
+        width: 500px;
         border: 1px solid #d9d9d9;
         border-radius: 4px;
         margin: 0 auto;
